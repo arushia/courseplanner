@@ -1,2 +1,2 @@
 # courseplanner
-EOH Course Planner
+EOH Course Planner - CourseRun

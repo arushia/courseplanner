@@ -4,7 +4,6 @@
   "description": "EOH project 2018",
   "main": "app.js",
   "scripts": {
-    "test": "make test",
     "start": "node app.js"
   },
   "repository": {

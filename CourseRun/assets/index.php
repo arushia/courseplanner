@@ -1,53 +1,29 @@
-<?php
+<!DOCTYPE <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Welcome to Your Page</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Tinos" rel="stylesheet">
 
-session_start();
 
-require 'database.php';
+  </head>
+  <body>
 
-if( isset($_SESSION['user_id']) ){
+    <div class="header">
+        <a href="/"> CourseRun</a>
+    </div>
 
-	$records = $conn->prepare('SELECT id,email,password FROM users WHERE id = :id');
-	$records->bindParam(':id', $_SESSION['user_id']);
-	$records->execute();
-	$results = $records->fetch(PDO::FETCH_ASSOC);
+    <h1>Please Login or Register<small></small></h1>
+    <a href="login.php">Login</a> or
+    <a href="register.php">Register</a>
 
-	$user = NULL;
+    </optgroup>
 
-	if( count($results) > 0){
-		$user = $results;
-	}
+    </optgroup>
 
-}
-
-?>
-
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Welcome to your Web App</title>
-	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
-	<link href='http://fonts.googleapis.com/css?family=Comfortaa' rel='stylesheet' type='text/css'>
-</head>
-<body>
-
-	<div class="header">
-		<a href="/">Your App Name</a>
-	</div>
-
-	<?php if( !empty($user) ): ?>
-
-		<br />Welcome <?= $user['email']; ?>
-		<br /><br />You are successfully logged in!
-		<br /><br />
-		<a href="logout.php">Logout?</a>
-
-	<?php else: ?>
-
-		<h1>Please Login or Register</h1>
-		<a href="login.php">Login</a> or
-		<a href="register.php">Register</a>
-
-	<?php endif; ?>
-
-</body>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  </body>
 </html>

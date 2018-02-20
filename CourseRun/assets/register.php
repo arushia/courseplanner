@@ -1,62 +1,59 @@
 <?php
 
-session_start();
-
-if( isset($_SESSION['user_id']) ){
-	header("Location: /");
-}
-
-require 'database.php';
-
-$message = '';
+//require 'database.php';
 
 if(!empty($_POST['email']) && !empty($_POST['password'])):
 
-	// Enter the new user in the database
-	$sql = "INSERT INTO users (email, password) VALUES (:email, :password)";
-	$stmt = $conn->prepare($sql);
+  //Enter the new user in the database
+  $sql = "INSERT INTO users (email, password) VALUES (:email, :password)";
+  $stmt = $conn->prepare($sql);
 
-	$stmt->bindParam(':email', $_POST['email']);
-	$stmt->bindParam(':password', password_hash($_POST['password'], PASSWORD_BCRYPT));
+  $stmt->bindParam(':email', $_POST['email']);
+  $stmt->bindParam(':password', password_hash($_Post['password'], PASSWORD_BCRYPT));
 
-	if( $stmt->execute() ):
-		$message = 'Successfully created new user';
-	else:
-		$message = 'Sorry there must have been an issue creating your account';
-	endif;
+  if( $stmt->execute() ):
+    die('Success');
+  else:
+    die('Fail');
+
+  endif;
 
 endif;
 
 ?>
 
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Register Below</title>
-	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
-	<link href='http://fonts.googleapis.com/css?family=Comfortaa' rel='stylesheet' type='text/css'>
-</head>
-<body>
+<!DOCTYPE <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Register Below</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Tinos" rel="stylesheet">
+  </head>
+  <body>
 
-	<div class="header">
-		<a href="/">Your App Name</a>
-	</div>
+    <div class="header">
+        <a href="/"> CourseRun</a>
+    </div>
 
-	<?php if(!empty($message)): ?>
-		<p><?= $message ?></p>
-	<?php endif; ?>
+      <h1>Login</h1>
+      <span>or <a href="register.php">register here</a></space>
 
-	<h1>Register</h1>
-	<span>or <a href="login.php">login here</a></span>
 
-	<form action="register.php" method="POST">
 
-		<input type="text" placeholder="Enter your email" name="email">
-		<input type="password" placeholder="and password" name="password">
-		<input type="password" placeholder="confirm password" name="confirm_password">
-		<input type="submit">
+      <form action="login.php" method="POST">
+        <input type="text" placeholder="Enter your email" name="email">
+        <input type="text" placeholder="First Name" name="firstname">
+        <input type="text" placeholder="Last Name" name="lastname">
+        <input type="password" placeholder="Password" name="password">
+        <input type="submit">
 
-	</form>
+      </form>
 
-</body>
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  </body>
 </html>

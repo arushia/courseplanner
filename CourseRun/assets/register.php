@@ -39,7 +39,6 @@ endif;
       <span>or <a href="register.php">register here</a></space>
 
 
-
       <form action="login.php" method="POST">
         <input type="text" placeholder="Enter your email" name="email">
         <input type="text" placeholder="First Name" name="firstname">

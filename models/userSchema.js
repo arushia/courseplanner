@@ -3,15 +3,15 @@ var mongoose = require("mongoose");
 var passportLocalMongoose = require("passport-local-mongoose");
 
 var userSchema = new mongoose.Schema({
-	username: String,
 	password: String,
+	email : String,
 	coursesTaken: [{
 		type: mongoose.Schema.Types.ObjectID,
-		ref: "Courses" 
+		ref: "Courses"
 	}],
 	favoritesPlanned: [{
 		type: mongoose.Schema.Types.ObjectID,
-		ref: "Courses" 
+		ref: "Courses"
 	}],
 	address: String
 });

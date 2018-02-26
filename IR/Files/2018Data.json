@@ -4274,7 +4274,7 @@
                       "A"
                     ],
                     "enrollmentStatus": [
-                      "Open"
+                      "Closed"
                     ],
                     "startDate": [
                       "2018-01-16-06:00"
@@ -9086,7 +9086,7 @@
                       "A"
                     ],
                     "enrollmentStatus": [
-                      "Closed"
+                      "Open"
                     ],
                     "startDate": [
                       "2018-01-16-06:00"
@@ -18697,7 +18697,7 @@
                       "A"
                     ],
                     "enrollmentStatus": [
-                      "Closed"
+                      "CrossListOpen"
                     ],
                     "startDate": [
                       "2018-01-16-06:00"
@@ -19895,7 +19895,7 @@
                       "A"
                     ],
                     "enrollmentStatus": [
-                      "Closed"
+                      "CrossListOpen"
                     ],
                     "startDate": [
                       "2018-01-16-06:00"

@@ -46,8 +46,8 @@ function callback(err, data, path) {
 var url1 = 'https://courses.illinois.edu/cisapp/explorer/schedule/2018/spring/CS.xml?mode=cascade'
 var url2 = 'https://courses.illinois.edu/cisapp/explorer/schedule/2017/fall/CS.xml?mode=cascade'
 
-var filePath2017 = "C:/Users/mikes/Desktop/courseplanner/IR/Files/2018Data.txt";
-var filePath2018 = "C:/Users/mikes/Desktop/courseplanner/IR/Files/2017Data.txt";
+var filePath2017 = "C:/Users/mikes/Desktop/courseplanner/IR/Files/2018Data.json";
+var filePath2018 = "C:/Users/mikes/Desktop/courseplanner/IR/Files/2017Data.json";
 
 xmlToJson(url1,callback, filePath2017);
 xmlToJson(url2,callback,filePath2018);

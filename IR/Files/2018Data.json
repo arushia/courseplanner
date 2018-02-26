@@ -320,7 +320,7 @@
                       "A"
                     ],
                     "enrollmentStatus": [
-                      "Closed"
+                      "Open"
                     ],
                     "startDate": [
                       "2018-01-16-06:00"
@@ -662,7 +662,7 @@
                       "A"
                     ],
                     "enrollmentStatus": [
-                      "Closed"
+                      "Open"
                     ],
                     "startDate": [
                       "2018-01-16-06:00"
@@ -1004,7 +1004,7 @@
                       "A"
                     ],
                     "enrollmentStatus": [
-                      "Closed"
+                      "Open"
                     ],
                     "startDate": [
                       "2018-01-16-06:00"
@@ -2258,7 +2258,7 @@
                       "A"
                     ],
                     "enrollmentStatus": [
-                      "Closed"
+                      "Open"
                     ],
                     "startDate": [
                       "2018-01-16-06:00"
@@ -2618,10 +2618,10 @@
                               {
                                 "instructor": [
                                   {
-                                    "_": "Cunningham, R",
+                                    "_": "Koiliaris, K",
                                     "$": {
-                                      "lastName": "Cunningham",
-                                      "firstName": "R"
+                                      "lastName": "Koiliaris",
+                                      "firstName": "K"
                                     }
                                   }
                                 ]
@@ -2735,10 +2735,10 @@
                               {
                                 "instructor": [
                                   {
-                                    "_": "Cunningham, R",
+                                    "_": "Tsai, P",
                                     "$": {
-                                      "lastName": "Cunningham",
-                                      "firstName": "R"
+                                      "lastName": "Tsai",
+                                      "firstName": "P"
                                     }
                                   }
                                 ]
@@ -2852,10 +2852,10 @@
                               {
                                 "instructor": [
                                   {
-                                    "_": "Cunningham, R",
+                                    "_": "Xiao, J",
                                     "$": {
-                                      "lastName": "Cunningham",
-                                      "firstName": "R"
+                                      "lastName": "Xiao",
+                                      "firstName": "J"
                                     }
                                   }
                                 ]
@@ -2969,10 +2969,10 @@
                               {
                                 "instructor": [
                                   {
-                                    "_": "Cunningham, R",
+                                    "_": "Khurana, S",
                                     "$": {
-                                      "lastName": "Cunningham",
-                                      "firstName": "R"
+                                      "lastName": "Khurana",
+                                      "firstName": "S"
                                     }
                                   }
                                 ]
@@ -3044,7 +3044,7 @@
                       "A"
                     ],
                     "enrollmentStatus": [
-                      "Closed"
+                      "CrossListOpen"
                     ],
                     "startDate": [
                       "2018-01-16-06:00"
@@ -3086,10 +3086,10 @@
                               {
                                 "instructor": [
                                   {
-                                    "_": "Cunningham, R",
+                                    "_": "Chen, S",
                                     "$": {
-                                      "lastName": "Cunningham",
-                                      "firstName": "R"
+                                      "lastName": "Chen",
+                                      "firstName": "S"
                                     }
                                   }
                                 ]
@@ -4274,7 +4274,7 @@
                       "A"
                     ],
                     "enrollmentStatus": [
-                      "Closed"
+                      "Open"
                     ],
                     "startDate": [
                       "2018-01-16-06:00"
@@ -4502,7 +4502,7 @@
                       "A"
                     ],
                     "enrollmentStatus": [
-                      "Closed"
+                      "Open"
                     ],
                     "startDate": [
                       "2018-01-16-06:00"
@@ -8029,7 +8029,7 @@
                       "A"
                     ],
                     "enrollmentStatus": [
-                      "Closed"
+                      "Open"
                     ],
                     "startDate": [
                       "2018-01-16-06:00"
@@ -25756,7 +25756,17 @@
                               "ARRANGED"
                             ],
                             "instructors": [
-                              ""
+                              {
+                                "instructor": [
+                                  {
+                                    "_": "Beckman, A",
+                                    "$": {
+                                      "lastName": "Beckman",
+                                      "firstName": "A"
+                                    }
+                                  }
+                                ]
+                              }
                             ]
                           }
                         ]
@@ -43624,10 +43634,10 @@
                               "W      "
                             ],
                             "roomNumber": [
-                              "106B8"
+                              "1131"
                             ],
                             "buildingName": [
-                              "Engineering Hall"
+                              "Siebel Center for Comp Sci"
                             ],
                             "instructors": [
                               {

@@ -7,7 +7,7 @@ var courseSchema = new mongoose.Schema({
 	CourseName: String, //label[0]
 	CourseDescription: String, //description
 	Scheduling: String, //classScheduleInformation
-	number: Number, // detailedSection - parents - course - $ - id
+	number: Number, // detailedSections - detailedSection - parents - course - $ - id
 	creditHours: String, //creditHours - will use regex to parse
 	avgGPA: Number, //hard coded
 	//use lecture locations. loop through each detailedSections - detailedSection to see if

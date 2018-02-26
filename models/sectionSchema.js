@@ -5,6 +5,7 @@ var sectionSchema = new mongoose.Schema({
 		type: mongoose.Schema.Types.ObjectID,
 		ref: "Course"
 	},
+	term: String,
 	//using connected course ID, create a string lie "CS 225" to search
 	//through cascading courses to find matching one,
 	//then loop through DetailedSections
@@ -15,9 +16,12 @@ var sectionSchema = new mongoose.Schema({
 	}],
 	location: String, 	//meetings - meeting  -buildingName
 	GPA: Number, //hardcoded for now? not sure on this one
-	open: Boolean, // need to find where to get this info
-	timestart: String  //meetings - meetings  - start and end
-	timeend: String
+	open: String, // need to find where to get this info
+	timestart: String,  //meetings - meetings  - start and end
+	timeend: String,
+	days: String,
+	type: String,
+	section: String,
 });
 
 module.exports = mongoose.model("Section", sectionSchema);

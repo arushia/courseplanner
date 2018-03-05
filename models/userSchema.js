@@ -6,11 +6,11 @@ var userSchema = new mongoose.Schema({
 	password: String,
 	email : String,
 	coursesTaken: [{
-		type: mongoose.Schema.Types.ObjectID,
+		type: mongoose.Schema.Types.ObjectId,
 		ref: "Courses"
 	}],
 	favoritesPlanned: [{
-		type: mongoose.Schema.Types.ObjectID,
+		type: mongoose.Schema.Types.ObjectId,
 		ref: "Courses"
 	}],
 	address: String

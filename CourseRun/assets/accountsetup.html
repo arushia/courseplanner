@@ -8,17 +8,17 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.2/bootstrap3-typeahead.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/js/bootstrap-multiselect.js"></script>
 
-  <!-- stylesheets used -->
-  <!-- Custom styles for this template -->
-  <link rel="stylesheet" href="http://v4-alpha.getbootstrap.com/examples/starter-template/starter-template.css">
+
+  <!-- stylesheets -->
   <link href="https://fonts.googleapis.com/css?family=Tinos" rel="stylesheet">
   <!-- My CSS -->
   <link rel="stylesheet" href="userpage.css">
 
 </head>
-<body>
-</head>
+
 <body>
 
   <div class="navbar">
@@ -41,56 +41,74 @@
   </nav>
 
   <h1>Please enter your information below</h1>
- <h3>Residential Address<h3>
-   <div class="container">
-   <form role="form" class="form-horizontal">
-       <div class="form-group">
-           <div class="col-lg-3"><input type="text" class="form-control" placeholder="Street Address"></div>
-           <div class="col-lg-3"><label><input type="text" class="form-control" placeholder="Address"></div>
-           <div class="col-lg-3"><label><input type="text" class="form-control" placeholder="State"></div>
-           <div class="col-lg-3"><label><input type="text" class="form-control" placeholder="Zipcode"></div>
-       </div>
-   </div>
 
-  <div class="container2">
-   <div class="form-group2">
-       <label class="col-lg-3">Please select the courses you have taken</label>
-   </div>
-   <div class="form-group">
-       <label class="col-lg-3">Courses</label>
-       <div class="col-lg-3"><input type="text" class="form-control" placeholder="Option 1"></div>
-       <div class="col-lg-3"><input type="text" class="form-control" placeholder="Option 2"></div>
-   </div>
-   <div class="form-group2">
-       <div class="col-lg-3">
-           <button type="submit" class="btn btn-info pull-right">Submit</button>
-       </div>
-   </div>
- </div>
+  <h3>Residential Address<h3>
+    <div class="container">
+      <div class="form-group">
+        <div class="col-lg-3"><input type="text" class="form-control" placeholder="Street Address"></div>
+        <div class="col-lg-3"><label><input type="text" class="form-control" placeholder="Address"></div>
+          <div class="col-lg-3"><label><input type="text" class="form-control" placeholder="State"></div>
+            <div class="col-lg-3"><label><input type="text" class="form-control" placeholder="Zipcode"></div>
+            </div>
+          </div>
 
 
+          <div class="container">
+            <div class="form-group">
+              <h3>Please select the courses you have taken<h3>
 
-  <script>
-  /*nav bar dropdown menu
-  /* When the user clicks on the button,
-  toggle between hiding and showing the dropdown content */
-  function myFunction() {
-    document.getElementById("myDropdown").classList.toggle("show");
-  }
+                <select class="custom-select" size="3">
+                  <option selected>Open this select menu</option>
+                  <option value="1">One</option>
+                  <option value="2">Two</option>
+                  <option value="3">Three</option>
+                </select>
+              </div>
+            </div>
 
-  // Close the dropdown if the user clicks outside of it
-  window.onclick = function(e) {
-    if (!e.target.matches('.dropbtn')) {
-      var myDropdown = document.getElementById("myDropdown");
-      if (myDropdown.classList.contains('show')) {
-        myDropdown.classList.remove('show');
-      }
-    }
-  }
-  </script>
 
-</body>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script>
-</body>
-</html>
+            <div class="container">
+              <div class="form-group">
+                <h3>Favourite Courses<h3>
+                  <label class="col-lg-3">
+                    <select class="custom-select" size="3">
+                      <option selected>Open this select menu</option>
+                      <option value="1">One</option>
+                      <option value="2">Two</option>
+                      <option value="3">Three</option>
+                    </select>
+                  </div>
+                </div>
+
+
+                <div class="container">
+                  <div class="form-group">
+                    <label class="col-lg-3">
+                      <button type="submit" class="btn btn-info pull-right">Submit</button>
+                    </div>
+                  </div>
+
+                  <script>
+                  /*nav bar dropdown menu
+                  /* When the user clicks on the button,
+                  toggle between hiding and showing the dropdown content */
+                  function myFunction() {
+                    document.getElementById("myDropdown").classList.toggle("show");
+                  }
+
+                  // Close the dropdown if the user clicks outside of it
+                  window.onclick = function(e) {
+                    if (!e.target.matches('.dropbtn')) {
+                      var myDropdown = document.getElementById("myDropdown");
+                      if (myDropdown.classList.contains('show')) {
+                        myDropdown.classList.remove('show');
+                      }
+                    }
+                  }
+                  </script>
+
+                </body>
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script>
+              </body>
+              </html>

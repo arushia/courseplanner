@@ -1,12 +1,7 @@
-@import url('https://fonts.googleapis.com/css?family=Playfair+Display:900i');
-@import url('https://fonts.googleapis.com/css?family=Work+Sans:200');
-@import url('https://fonts.googleapis.com/css?family=Work+Sans:300');
-
 body{
   margin:0px;
   padding: 0px;
-  font-family: 'Work Sans', sans-serif;
-    font-display: 300;
+  font-family: 'Tinos', serif;
   text-align: center;
 }
 
@@ -23,15 +18,13 @@ input[type="email"], input[type="password"], input[type="text1"], input[type="te
 input[type="submit"]{
   padding: 10px;
   color: #fff;
-  background-color: cornflowerblue;
+  background: #0098cb;
   width: 320px;
   margin 20px auto;
   margin-top: 0px;
   border: 0px;
   border-radius: 3px;
   cursor: pointer;
-  font-family: 'Work Sans', sans-serif;
-    
 }
 
 input[type="submit"]:hover{
@@ -59,7 +52,7 @@ input[type="submit"]:hover{
   display: none; /*hide original SELECT element:*/
 }
 .select-selected {
-  background-color: cornflowerblue;
+  background-color: DodgerBlue;
 }
 /*style the arrow inside the select element:*/
 .select-selected:after {
@@ -88,7 +81,7 @@ input[type="submit"]:hover{
 /*style items (options):*/
 .select-items {
   position: absolute;
-  background-color: cornflowerblue;
+  background-color: DodgerBlue;
   top: 100%;
   left: 0;
   right: 0;
@@ -105,7 +98,6 @@ input[type="submit"]:hover{
 .navbar {
     overflow: hidden;
     background-color: #333;
-    
     /* font-family: Arial, Helvetica, sans-serif; */
 }
 
@@ -116,7 +108,6 @@ input[type="submit"]:hover{
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-    
 }
 
 .dropdown {
@@ -164,20 +155,4 @@ input[type="submit"]:hover{
 
 .show {
     display: block;
-}
-
-h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 45px;
-    margin-top: 10;
-    margin-bottom: auto;
-    color: dimgrey;
-}
-
-.navbar-brand {
-    font-family: 'Playfair Display', serif;
-}
-
-.login {
-    margin-top: 10;
 }

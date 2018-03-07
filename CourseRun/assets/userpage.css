@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display:900i');
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:200');
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:300');
+
 .navbar {
     overflow: hidden;
     background-color: #333;
@@ -65,7 +69,8 @@
 body{
   margin:0px;
   padding: 0px;
-  font-family: 'Tinos';
+  font-family: 'Work Sans', sans-serif;
+    font-display: 300;
 }
 
 h1 {
@@ -92,4 +97,8 @@ input[type="text"]{
   border-radius: 3px;
   border: 1px solid #eee;
   margin: 20px auto;
+}
+
+.navbar-brand {
+    font-family: 'Playfair Display', serif;
 }

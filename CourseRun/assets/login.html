@@ -7,8 +7,6 @@
     <title>Login page</title>
 
 <!-- stylesheets used -->
-  <!-- Custom styles for this template -->
-    <link rel="stylesheet" href="http://v4-alpha.getbootstrap.com/examples/starter-template/starter-template.css">
     <link href="https://fonts.googleapis.com/css?family=Tinos" rel="stylesheet">
     <!-- My CSS  -->
     <link rel="stylesheet" href="style.css">
@@ -65,7 +63,7 @@
   function check(form)/*function to check userid & password*/
   {
  /*the following code checkes whether the entered userid and password are matching*/
- if(form.email.value == "email" && form.password.value == "password")
+ if(login.html.email.value == "email" && form.password.value == "password")
   {
     window.open('target.html')/*opens the target page while Id & password matches*/
   }
@@ -81,8 +79,8 @@
       <span>or <a href="register.html">register here</a></space>
 
       <form action="login.html" method="POST">
-        <input type="email" placeholder="Enter your email" name="email">
-        <input type="password" placeholder="Password" name="password">
+        <input type="email" id="email" placeholder="Enter your email" name="email">
+        <input type="password" id="password"placeholder="Password" name="password">
 
         <div class="checkbox">
             <label>
@@ -93,6 +91,8 @@
         <input type="submit">
 
       </form>
+
+
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>

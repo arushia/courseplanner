@@ -266,8 +266,8 @@ app.get("/logout", function(req, res){
 //     res.render("about");
 // });
 //
-app.listen(3000, function(){
-   console.log("The Server Has Started!");
-});
+// app.listen(3000, function(){
+//    console.log("The Server Has Started!");
+// });
 
-//app.listen(process.env.PORT, process.env.IP);
+app.listen(process.env.PORT, process.env.IP);

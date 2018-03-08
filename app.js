@@ -209,33 +209,65 @@ app.put("/accountsetup/:id", function(req, res){
       if(err){
           res.redirect("index");
       } else {
-          req.body.taken.forEach(function(ele){
-            var splitName = ele.split(" ")
-            Course.find({abrCollege:splitName[0], number:splitName[1]}, function(err,result){
-              if(err){
-                console.log(err.message)
-              } else {
-                if(result.length>0){
-                  user.coursesTaken.push(result[0])
-                  user.save()
+        if(req.body.taken){
+          if(typeof(req.body.taken)=="string"){
+              var splitName = req.body.taken.split(" ")
+              Course.find({abrCollege:splitName[0], number:splitName[1]}, function(err,result){
+                if(err){
+                  console.log(err.message)
+                } else {
+                  if(result.length>0){
+                    user.coursesTaken.push(result[0])
+                    user.save()
+                  }
                 }
-              }
+              })
+          } else{
+            req.body.taken.forEach(function(ele){
+              var splitName = ele.split(" ")
+              Course.find({abrCollege:splitName[0], number:splitName[1]}, function(err,result){
+                if(err){
+                  console.log(err.message)
+                } else {
+                  if(result.length>0){
+                    user.coursesTaken.push(result[0])
+                    user.save()
+                  }
+                }
+              })
             })
-          })
+          }
+        }
 
-          req.body.favorited.forEach(function(ele){
-            var splitName = ele.split(" ")
-            Course.find({abrCollege:splitName[0], number:splitName[1]}, function(err,result){
-              if(err){
-                console.log(err.message)
-              } else {
-                if(result.length>0){
-                  user.favoritesPlanned.push(result[0])
-                  user.save()
+        if(req.body.favorited){
+          if(typeof(req.body.favorited)=="string"){
+              var splitName = req.body.favorited.split(" ")
+              Course.find({abrCollege:splitName[0], number:splitName[1]}, function(err,result){
+                if(err){
+                  console.log(err.message)
+                } else {
+                  if(result.length>0){
+                    user.favoritesPlanned.push(result[0])
+                    user.save()
+                  }
                 }
-              }
+              })
+          } else{
+            req.body.favorited.forEach(function(ele){
+              var splitName = ele.split(" ")
+              Course.find({abrCollege:splitName[0], number:splitName[1]}, function(err,result){
+                if(err){
+                  console.log(err.message)
+                } else {
+                  if(result.length>0){
+                    user.favoritesPlanned.push(result[0])
+                    user.save()
+                  }
+                }
+              })
             })
-          })
+          }
+        }
           res.redirect("/search");
       }
    });
@@ -258,16 +290,16 @@ app.get("/logout", function(req, res){
 
 
 
-// app.get("/", function(req, res){
-//     res.render("home");
-// });
-//
-// app.get("/about", function(req, res){
-//     res.render("about");
-// });
-//
-// app.listen(3000, function(){
-//    console.log("The Server Has Started!");
-// });
+app.get("/", function(req, res){
+    res.render("home");
+});
 
-app.listen(process.env.PORT, process.env.IP);
+app.get("/about", function(req, res){
+    res.render("about");
+});
+
+app.listen(3000, function(){
+   console.log("The Server Has Started!");
+});
+
+// app.listen(process.env.PORT, process.env.IP);

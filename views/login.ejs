@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Login page</title>
+
+<!-- stylesheets used -->
+  <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="http://v4-alpha.getbootstrap.com/examples/starter-template/starter-template.css">
+    <link href="https://fonts.googleapis.com/css?family=Tinos" rel="stylesheet">
+    <!-- My CSS  -->
+    <link rel="stylesheet" href="style.css">
+
+  </head>
+  <body>
+
+  </head>
+  <body>
+    </head>
+    <body>
+  <!--    <div class="header">
+          <h1><a href="/"> CourseRun</a></h1>
+      </div> -->
+    <div class="navbar">
+
+      <nav class="navbar navbar-light" style="background-color: cornflowerblue;">
+        <!-- Navbar content -->
+        <a class="navbar-brand">CourseRun</a>
+        <a href="#home">Home</a>
+        <div class="dropdown">
+          <button class="dropbtn" onclick="myFunction()">Colleges
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content" id="myDropdown">
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+          </div>
+        </div>
+      </div>
+
+      </nav>
+
+    <script>
+    /* When the user clicks on the button,
+    toggle between hiding and showing the dropdown content */
+    function myFunction() {
+        document.getElementById("myDropdown").classList.toggle("show");
+    }
+
+    // Close the dropdown if the user clicks outside of it
+    window.onclick = function(e) {
+      if (!e.target.matches('.dropbtn')) {
+        var myDropdown = document.getElementById("myDropdown");
+          if (myDropdown.classList.contains('show')) {
+            myDropdown.classList.remove('show');
+          }
+      }
+    }
+    </script>
+
+    <script language="javascript">
+  function check(form)/*function to check userid & password*/
+  {
+ /*the following code checkes whether the entered userid and password are matching*/
+ if(form.email.value == "email" && form.password.value == "password")
+  {
+    window.open('target.html')/*opens the target page while Id & password matches*/
+  }
+ else
+ {
+   alert("Error Password or Username")/*displays error message*/
+  }
+}
+</script>
+    </body>
+
+      <h1>Login</h1>
+      <span>or <a href="/register">register here</a></space>
+
+      <form action="/login" method="post">
+        <input type="username" placeholder="Enter your username" name="username">
+        <input type="password" placeholder="Password" name="password">
+
+        <div class="checkbox">
+            <label>
+            <input type="checkbox" value="remember-me"> Remember me
+            </label>
+        </div>
+
+        <input type="submit">
+
+      </form>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  </body>
+</html>

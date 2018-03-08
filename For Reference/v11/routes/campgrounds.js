@@ -41,7 +41,7 @@ router.post("/", middleware.isLoggedIn, function(req, res){
 
 //NEW - show form to create new campground
 router.get("/new", middleware.isLoggedIn, function(req, res){
-   res.render("campgrounds/new"); 
+   res.render("campgrounds/new");
 });
 
 // SHOW - shows more info about one campground
@@ -91,4 +91,3 @@ router.delete("/:id",middleware.checkCampgroundOwnership, function(req, res){
 
 
 module.exports = router;
-

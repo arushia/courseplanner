@@ -34,6 +34,13 @@ passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
+app.use(function(req, res, next){
+   res.locals.currentUser = req.user;
+   // res.locals.error = req.flash("error");
+   // res.locals.success = req.flash("success");
+   next();
+});
+
 //seedDB();
 // var profs = []
 // Section.find({},(err,sections) => {
@@ -72,12 +79,102 @@ passport.deserializeUser(User.deserializeUser());
 app.get("/", function(req, res){
     res.render("index.ejs");
 });
+
 app.get("/search", function(req, res){
-    res.render("search.ejs");
+  Section.find({},function(err, Sections){
+    if(err){
+      console.log(err.message)
+    } else {
+      res.render("search.ejs", {sections: Sections});
+    }
+  })
+
 });
 app.get("/register", function(req, res){
     res.render("register.ejs");
 });
+
+app.get("/results", function(req, res){
+    var query = req.url
+    var lg = 0
+    if(query.indexOf("zero")!==-1) {
+      lg = 0
+    } else if(query.indexOf("one")!==-1) {
+      lg = 1
+    } else if(query.indexOf("two")!==-1){
+      lg = 2
+    } else if(query.indexOf("three")!==-1){
+      lg = 3
+    }
+    var cs = query.indexOf("college=")+8;
+    var ce = query.indexOf("professor=")-1;
+    var colleges = query.substring(cs,ce)
+    var ns = query.indexOf("num=")+4;
+    var ne = query.indexOf("college=")-1;
+    var numbert =  query.substring(ns,ne)
+    var ps = query.indexOf("professor=")+10;
+    var pe = query.length
+    var professors = query.substring(ps,pe)
+    professors = professors.replace("%2C", ",")
+    professors = professors.replace("+", " ")
+    if(colleges == "Choose..."){
+      colleges = ""
+    }
+    if(professors == "Choose..."){
+      professors = ""
+    }
+      // console.log(colleges)
+      // console.log(number)
+      // console.log(professors)
+      // console.log(lg)
+      // console.log(hg)
+    // Section.find({},function(err,Courses){
+    //   courses = []
+    //   if(err){
+    //     console.log(err.message)
+    //   } else {
+    //     Courses.forEach(function(course){
+    //       var splitName = course.parent.split(" ")
+    //       //console.log( splitName[0].indexOf(colleges) + " "+  course.professors.toString().indexOf(professors) + " "+  splitName[1].indexOf(number))
+    //       if( splitName[0].indexOf(colleges)>-1 && course.professors.toString().indexOf(professors)>-1 && splitName[1].indexOf(number)>-1){
+    //         console.log("searching " + course.parentCourse.toString())
+    //         Course.findById(course.parentCourse, function(err,co){
+    //           if(err){
+    //             console.log(err.message)
+    //           }
+    //           if (!courses.includes(co) && (co.avgGPA == -1 || (co.avgGPA>lg && co.avgGPA < hg))) {
+    //             console.log(!courses.includes(co))
+    //             courses.push(co)
+    //             console.log(co)
+    //           }
+    //         })
+    //       }
+    //     })
+    //   }
+    // })
+    if(numbert != ""){
+      Course.find({avgGPA: { $gt : lg}, abrCollege: "CS" , number:numbert}, function(err,Courses){
+        if(err){
+          console.log(err.message)
+        } else {
+          console.log(Courses)
+          res.render("results.ejs" , {courses : Courses});
+        }
+      })
+    } else {
+      Course.find({avgGPA: { $gt : lg}, abrCollege:"CS"}, function(err,Courses){
+        if(err){
+          console.log(err.message)
+        } else {
+          console.log(Courses)
+          res.render("results.ejs" , {courses : Courses});
+        }
+    })
+  }
+
+});
+
+
 app.get("/login", function(req, res){
     res.render("login.ejs");
 });
@@ -90,9 +187,6 @@ app.get("/accountsetup/:id", function(req, res){
     }
   })
 
-});
-app.get("/results/:lg/:hg/:colleges/:number/:professors", function(req, res){
-    res.render("course.ejs");
 });
 
 app.post("/register", function(req, res){
@@ -152,6 +246,13 @@ app.post("/login", passport.authenticate("local",
         successRedirect: "/search",
         failureRedirect: "/login"
     }), function(req, res){
+});
+
+app.get("/logout", function(req, res){
+   req.logout();
+   res.redirect("/")
+   // req.flash("success", "Logged you out!");
+   // res.redirect("/campgrounds");
 });
 
 

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <link rel="stylesheet" href="http://v4-alpha.getbootstrap.com/examples/starter-template/starter-template.css">
+      <link href="https://fonts.googleapis.com/css?family=Tinos" rel="stylesheet">
+      <link rel="stylesheet" href="searchcss.css">
+
+      <!-- My CSS  -->
+      <link rel="stylesheet" href="searchcss.css">
+      <div class="navbar" style="padding: 0">
+
+        <nav class="navbart" style="background-color: cornflowerblue; width:100%">
+          <!-- Navbar content -->
+          <div class="container-fluid">
+            <a href="/" class="navbar-brand">CourseRun</a>
+            <a href="/search" style="float:left">Home</a>
+            <% if(!currentUser){ %>
+                <a href="/login" style="float:right">Login</a>
+                <a href="/register" style="float:right">Sign Up</a>
+            <% } else { %>
+                <a href="#" style="float:right">Signed In As <%= currentUser.username %></a>
+                <a href="/logout" style="float:right">Logout</a>
+            <% } %>
+        </div>
+
+        </nav>
+      </div>

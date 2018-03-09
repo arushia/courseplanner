@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html>
-  <head>
+<% include header %>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -23,25 +21,7 @@
   <!--    <div class="header">
           <h1><a href="/"> CourseRun</a></h1>
       </div> -->
-    <div class="navbar">
 
-      <nav class="navbar navbar-light" style="background-color: cornflowerblue;">
-        <!-- Navbar content -->
-        <a class="navbar-brand">CourseRun</a>
-        <a href="#home">Home</a>
-        <div class="dropdown">
-          <button class="dropbtn" onclick="myFunction()">Colleges
-            <i class="fa fa-caret-down"></i>
-          </button>
-          <div class="dropdown-content" id="myDropdown">
-            <a href="#">Link 1</a>
-            <a href="#">Link 2</a>
-            <a href="#">Link 3</a>
-          </div>
-        </div>
-      </div>
-
-      </nav>
 
     <script>
     /* When the user clicks on the button,
@@ -78,10 +58,10 @@
     </body>
 
       <h1>Login</h1>
-      <span>or <a href="register.html">register here</a></space>
+      <span>or <a href="/register">register here</a></space>
 
-      <form action="login.html" method="POST">
-        <input type="email" placeholder="Enter your email" name="email">
+      <form action="/login" method="post">
+        <input type="username" placeholder="Enter your username" name="username">
         <input type="password" placeholder="Password" name="password">
 
         <div class="checkbox">
@@ -94,9 +74,4 @@
 
       </form>
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-  </body>
-</html>
+<% include bottom %>

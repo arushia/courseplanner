@@ -1,5 +1,5 @@
 var loopCount = 9;
-var sectionDataArray = [];
+var testSectionArray = [];
 var sectionData = {};
 
 function populateData() {
@@ -14,11 +14,24 @@ function populateData() {
     sectionData.location = 'L416 Digital Computer Laboratory';
     sectionData.instructor = 'Davis, N';
 
-    sectionDataArray.push(sectionData);
+    testSectionArray.push(sectionData);
   }
 }
 
-function drawTable() {
+var testData;
+testData.courseNumber = "CS101";
+testData.courseName = "Intro Computing: Engrg & Sci";
+testData.courseGPA = "3.94";
+testData.courseDescription = "Fundamental principles, concepts, and methods of computing, with emphasis on applications in the physical sciences and engineering. Basic problem solving and programming techniques; fundamental algorithms and data structures; use of computers in solving engineering and scientific problems. Intended for engineering and science majors. Prerequisites MATH 220 or MATH 221.";
+
+function drawInfo(courseData) {
+  $('#courseNumber').empty().append(courseData.courseNumber);
+  $('#courseName').empty().append(courseData.courseName);
+  $('#courseGPA').empty().append(courseData.courseGPA);
+  $('#courseDescription').empty().append(courseData.courseDescription);
+}
+
+function drawTable(sectionDataArray) {
   console.log("Attempting to Draw Boxes");
   var tempHTML = "";
 
@@ -51,6 +64,8 @@ function drawTable() {
   $('#testCS101').append(tempHTML);
 }
 
-populateData();
+// populateData();
 
-drawTable();
+drawInfo(testData);
+
+drawTable(testSectionArray);

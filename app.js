@@ -157,7 +157,7 @@ app.get("/results", function(req, res){
         if(err){
           console.log(err.message)
         } else {
-          console.log(Courses)
+          //console.log(Courses)
           res.render("results.ejs" , {courses : Courses});
         }
       })
@@ -166,7 +166,7 @@ app.get("/results", function(req, res){
         if(err){
           console.log(err.message)
         } else {
-          console.log(Courses)
+          //console.log(Courses)
           res.render("results.ejs" , {courses : Courses});
         }
     })
@@ -287,7 +287,21 @@ app.get("/logout", function(req, res){
    // res.redirect("/campgrounds");
 });
 
-
+app.get("/course/:id", function(req, res){
+    Course.findById(req.params.id, function(err,course){
+      if(err){
+        console.log(err)
+      } else {
+        Section.find({parentCourse:course}, function(err,result){
+          if(err){
+            console.log(err.message)
+          } else {
+            res.render("course", {mainCourse:course, sections: result});
+        }
+      })
+    }
+  })
+});
 
 
 app.get("/", function(req, res){
